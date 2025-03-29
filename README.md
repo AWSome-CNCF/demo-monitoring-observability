@@ -22,7 +22,7 @@ Counting ping request from Go application, fire an alert if `ping_request_count 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/demo-monitoring-observability.git
+    git clone https://github.com/AWSome-CNCF/demo-monitoring-observability.git
     cd demo-monitoring-observability
     ```
 
