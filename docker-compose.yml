@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  go_app:
+    container_name: go_app
+    build: .
+    ports:
+      - "8080:8080"
+
+  prometheus:
+    container_name: prom
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./rules.yml:/etc/prometheus/rules.yml
+      - prom_data:/prometheus
+
+  alert_manager:
+    container_name: alert_manager
+    image: quay.io/prometheus/alertmanager:latest
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+
+  node_exporter:
+    container_name: node
+    image: quay.io/prometheus/node-exporter:latest
+    ports:
+      - "9100:9100"
+
+  grafana:
+    container_name: grafa
+    image: grafana/grafana-enterprise:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  prom_data:
+  grafana_data:
