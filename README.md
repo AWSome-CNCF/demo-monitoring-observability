@@ -30,6 +30,17 @@ Counting ping request from Go application, fire an alert if `ping_request_count 
     ```bash
     docker-compose up -d
     ```
+    
+    2.1. Optional - Restore data from backup
+    
+    If you need data to play with:
+    
+    ```bash
+    cd data
+    docker run --rm -v prom_data:/data -v $(pwd):/backup alpine tar -xzf /backup/prom_data.tar.gz -C /data
+    docker run --rm -v grafana_data:/data -v $(pwd):/backup alpine tar -xzf /backup/grafana_data.tar.gz -C /data
+    ```
+
 
 3. Access the following services:
     - Prometheus: [http://localhost:9090](http://localhost:9090)
