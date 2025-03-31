@@ -6,6 +6,17 @@ Running containers from a single docker compose configuration file.
 
 Counting ping request from Go application, fire an alert if `ping_request_count > 5`.
 
+## Demo
+
+Grafana:
+![Grafana](/images/image.png)
+
+Prometheus:
+![Prometheus](/images/image-1.png)
+
+Alert manager:
+![Alert manager](/images/image-2.png)
+
 ## Features
 
 - **Monitoring**: Collect and visualize metrics from your applications and infrastructure.
