@@ -8,6 +8,10 @@ Counting ping request from Go application, fire an alert if `ping_request_count 
 
 ## Demo
 
+Recording:
+
+[![Video Demo](https://img.youtube.com/vi/4E3FZ_XBXOA/0.jpg)](https://www.youtube.com/watch?v=4E3FZ_XBXOA)
+
 Grafana:
 ![Grafana](/images/image.png)
 
